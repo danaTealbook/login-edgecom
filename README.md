@@ -6,5 +6,4 @@ npm install
 Then run the following to start the project:
 npm start
 
-
 Use Node version: v17.1.0

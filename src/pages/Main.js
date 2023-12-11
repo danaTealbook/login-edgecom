@@ -92,26 +92,15 @@ export default function Main() {
       let _articles = [...articles];
       let _article = { ...article };
 
-      if (article.id) {
-        const index = findIndexById(article.id);
+      const index = findIndexById(article.id);
 
-        _articles[index] = _article;
-        toast.current.show({
-          severity: "success",
-          summary: "Successful",
-          detail: "Article Updated",
-          life: 3000,
-        });
-      } else {
-        _article.id = createId();
-        _articles.push(_article);
-        toast.current.show({
-          severity: "success",
-          summary: "Successful",
-          detail: "Article Created",
-          life: 3000,
-        });
-      }
+      _articles[index] = _article;
+      toast.current.show({
+        severity: "success",
+        summary: "Successful",
+        detail: "Article Updated",
+        life: 3000,
+      });
 
       setArticles(_articles);
       setEditDialog(false);
