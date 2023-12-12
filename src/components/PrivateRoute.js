@@ -3,7 +3,8 @@ import React from "react";
 import { mockGetLoggedInUser } from "../mockAPIFunctions/mockUserFunctions";
 
 export function PrivateRoute({ element }) {
-  const isLoggedIn = mockGetLoggedInUser() === "" ? false : true;
+  const getLoggedInUser = mockGetLoggedInUser()
+  const isLoggedIn = (getLoggedInUser && getLoggedInUser !== "") ? true : false;
 
   return isLoggedIn ? element : <Navigate to="/login" />;
 }
